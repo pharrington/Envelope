@@ -1,0 +1,1 @@
+require 'mass_assignable'

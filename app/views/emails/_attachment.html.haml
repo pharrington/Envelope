@@ -1,0 +1,3 @@
+%p.attachment
+  =file_field :email, "attachments[#{session['attachment_count']}]"
+  %a.remove{ :href => "#" } Remove

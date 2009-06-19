@@ -1,0 +1,6 @@
+#contact
+  -form_for @contact, :url => contact_path(@contact), :html => {:method => :put} do |f|
+    =f.text_field "Name:", :name
+    -%w[Email Phone Address IM].each do |attribute|
+      =render :partial => "attribute", :object => attribute, :locals => attributes_locals(attribute)
+    =submit_tag "Save"

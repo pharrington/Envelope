@@ -1,0 +1,6 @@
+-field_set_tag legend, :id => attribute.downcase do
+  =link_to "Add", {:action => "add_item", :item => attribute}, :class => "add"
+  -if collection.empty?
+    =render :partial => attribute.downcase, :object => new_object
+  -else !collection.empty?
+    =render :partial => attribute.downcase, :collection => collection

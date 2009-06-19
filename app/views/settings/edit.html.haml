@@ -1,0 +1,11 @@
+-form_for @settings, :url => settings_path do |f|
+  =f.text_field "Display Name:", :name
+  %p.signature
+    =f.label :signature, "Signature"
+    %span.off
+      =f.radio_button :signature_enabled, false
+      =f.label "signature_enabled_false", "Do not use signature"
+    %span.on
+      =f.radio_button "signature_enabled", true
+      =f.text_area :signature
+  =submit_tag "Save"

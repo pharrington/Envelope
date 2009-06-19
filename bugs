@@ -1,0 +1,14 @@
+application randomly freezes
+
+-fixed
+yes
+-how to reproduce
+span requests when logged in (eg login, hold F5 on /emails)
+-comments
+seems to be caused by the one server (Mongrel) process unable to process concurrent connections
+
+reduced the impact by using Pratik Naik's mongrel patch, but without concurrent MySQL connections support it still can't reallly be fixed
+--
+
+fix:
+added Timeout.timeout to IMAP login code

@@ -1,0 +1,18 @@
+%ul#contact_menu
+  %li= link_to "New", new_contact_path
+  %li= link_to "Edit", edit_contact_path(@contact)
+  %li= link_to "Delete", contact_path(@contact), :class => "destroy"
+#contact
+  .name= h @contact.name
+  -@contact.emails.each do |email|
+    %ul.emails
+      %li= link_to h(email.email), new_email_path(:to => email.email)
+  -@contact.phones.each do |phone|
+    %ul.phones
+      %li= h phone.number
+  -@contact.addresses.each do |address|
+    %ul.addresses
+      %li= h address.address
+  -@contact.ims.each do |im|
+    %ul.ims
+      %li= h im.handle

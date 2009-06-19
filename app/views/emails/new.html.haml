@@ -1,0 +1,10 @@
+=include_tiny_mce_if_needed
+-form_for @email, :url => emails_path, :html => {:id => 'composition', :multipart => true} do |f|
+  =f.hidden_field :uid
+  =f.text_field "To:", :to
+  =f.text_field "Subject:", :subject
+  %p
+    =f.text_area :body, :class => "mceEditor"
+  %fieldset#attachments
+    %a#add_attachment{ :href => add_attachment_path } Add Attachment
+  =submit_tag 'Send'

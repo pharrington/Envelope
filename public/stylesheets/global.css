@@ -1,0 +1,162 @@
+* {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-size: 1em;
+}
+
+body {
+        font-family: Arial/*, sans-serif*/;
+        position: relative;
+        top: 0px; left: 0px; z-index: 0;
+        font-size: .8em;
+        padding: 5px 0 0 10px;
+        /*background: #9197A6;*/
+        background: url('/webmail/images/darkgradient.png') #d5d7dd repeat-x;
+}
+
+img {
+        border-style: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+input, textarea, select {
+  border: 1px solid;
+}
+
+#navigation {
+  clear: both;
+  float: left;
+}
+
+a.compose, a.contacts {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#contacts_nav a.new_contact {
+  position: absolute;
+  bottom: 10px;
+}
+
+#mail_nav, #contacts_nav {
+  position: relative;
+  padding: 24px 0 0 25px;
+  width: 160px;
+  height: 300px;
+}
+
+#contacts_nav .contacts_search {
+  position: absolute;
+  margin-left: -15px;
+  bottom: 32px;
+  width: 160px;
+}
+
+p.selection_label, #selection {
+  float: left;
+}
+
+#mail_nav ul, #contacts_nav ul {
+  margin-top: 2em;
+}
+
+#mail_nav ul li, #contacts_nav ul li {
+  line-height: 1.5em;
+}
+
+#contacts_nav, #mail_nav, #content {
+  background: url('/webmail/images/lightgradient.png') #d5dae5 repeat-x;
+  border: 1px solid #43464c;
+}
+
+#contacts_nav {
+  margin-top: 10px;
+}
+
+#content {
+  float: left;
+  margin: 0 0 20px 20px;
+  padding-top: 24px;
+  width: 763px;
+}
+
+#content .controls {
+  padding-left: 5px;
+}
+
+#selection li, #menu li, #global_menu li {
+  float: left;
+  margin: 0 .2em 0 .2em;
+}
+
+#global_menu ul {
+  float: right;
+}
+
+#global_menu {
+  margin: 0 10px 30px 0;
+}
+
+#body {
+  clear: both;
+  margin-top: 20px;
+  border: 1px solid;
+}
+
+#message_delete {
+  display: block;
+  clear: both;
+}
+
+#message_list {
+  margin-top: 20px;
+  border: 1px solid #43464c;
+}
+
+#message_list .unread {
+  font-weight: bold;
+}
+
+#message_list p {
+  position: relative;
+  height: 1.5em;
+  padding: 5px 0 3px 5px;
+  /*border-bottom: 1px dotted #eee;*/
+  border-bottom: 2px solid #b1b7c0;
+  margin: 0 10px 0 0;
+}
+
+#message_list p .from, #message_list p .subject {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; /* Opera 9 */
+}
+
+#message_list p .from {
+  left: 25px;
+  width: 200px;
+}
+
+#message_list p .subject {
+  left: 260px;
+  width: 483px;
+}
+
+p.signature span {
+  display: block;
+}
+
+.signature .on input {
+  vertical-align: top;
+}

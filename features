@@ -1,0 +1,19 @@
+-add:
+	(done) redirect to requested page on login
+	(done) delete, reply to, forward email
+	(done) show headers
+	(done) search
+	(done) mailbox selection
+	(done) group operations
+	(done) contacts
+		(done) email
+		(done) name
+		(done) phone
+		(done) address
+		(done) IM
+		(done) sending an email to an address automatically adds the address to your contacts
+	global settings
+		(done) name
+		auto-hide external images
+		(done) signature
+	(01:24:11 AM) TheApostage: oh my god Opera 10 seems to have download settings that work on a per-filetype basis

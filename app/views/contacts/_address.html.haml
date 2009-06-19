@@ -1,0 +1,8 @@
+-fields_for "contacts_contact[addresses_attributes][]", address, :builder => ActionView::Helpers::FormBuilder do |f|
+  %p
+    =f.text_area :address, :index => nil
+    =f.select :type, Contacts::AddressType.all.map(&:type), {}, :index => nil
+    -unless address.new_record?
+      =f.hidden_field :id, :index => nil
+      =f.hidden_field '_delete', :index => nil, :class => "delete"
+    %a.remove{:href => "#"} Remove

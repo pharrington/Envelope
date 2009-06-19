@@ -1,0 +1,3 @@
+#contact
+  -form_for @contact, :url => contact_path(@contact) do |f|
+    =render :partial => 'form', :locals => { :f => f }

@@ -1,0 +1,4 @@
+-form_for @user_session, :url => login_path do |f|
+  =f.text_field "Email address", :email
+  =f.password_field "Password", :password
+  =f.submit "Login"

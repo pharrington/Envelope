@@ -1,0 +1,23 @@
+-content_for :title do
+  = "#{current_user.email} - #{session['mailbox']}"
+-form_tag emails_path, :method => :get, :id => "mailbox_search" do
+  .controls
+    =text_field_tag :q
+    =submit_tag "Search"
+-form_tag mass_process_path, :id => "mass_process" do
+  .controls
+    %p.selection_label Select:
+    %ul#selection
+      %li#all= link_to "All", "#"
+      %li#none= link_to "None", "#"
+      %li#read= link_to "Read", "#"
+      %li#unread= link_to "Unread", "#"
+      %li#inverse= link_to "Inverse", "#"
+    =submit_tag "Delete", :id => "message_delete"
+  #message_list
+    -@messages.each do |m|
+      -content_tag :p, :class => seen_class(m.flags) do
+        =check_box_tag "uid[#{m.uid}]", "1", false, :class => "message_toggle"
+        %span{ :class => "from" }= h m.from
+        -link_to email_path(m.uid) do
+          %span{ :class => "subject" }= h m.subject

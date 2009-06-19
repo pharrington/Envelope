@@ -1,0 +1,20 @@
+-content_for :title do
+  =@email.subject
+%p= link_to "<< Back to #{session['mailbox']}", emails_path
+%ul#menu
+  %li= link_to "Reply", :action => 'reply'
+  %li= link_to "Forward", :action => 'forward'
+  %li= link_to "Delete", email_path(@email.uid), :class => 'destroy'
+  %li= link_to "View Email Headers", :action => 'header'
+  %li= link_to "View Raw Content", email_path(@email.uid, :raw => true)
+-if @email.blocked_images?
+  #block_images
+    =link_to "Display images for this email", whitelist_uid_path(:uid => @email.uid)
+#body
+  =@content
+-unless @attachments.empty?
+  %p#attachments
+    Attachments:
+    %ul
+      -@attachments.each do |a|
+        %li= link_to h(a.name), download_attachments_path(@email.uid, URI.escape(a.name, '.'))
