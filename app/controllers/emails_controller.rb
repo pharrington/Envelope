@@ -33,7 +33,7 @@ END
     @email = Email.new(current_user, helper, params[:email])
     current_user.update_contacts @email.to
     @email.mailbox = mailbox
-    @email.deliver
+    @email.deliver imap.user, imap.password
     flash[:notice] = "Message sent."
     redirect_to emails_path
   end
@@ -46,7 +46,7 @@ END
     @email = process_message(message, message.subject, '', message.to)
     @email.from = message.from
     @attachments = message.attachments
-    @content = params[:raw] ? helper.html_escape(mailbox.fetch_raw(uid)) : @email.body
+    @content = params[:raw] ? helper.clean_plain(mailbox.fetch_raw(uid)) : @email.body
     set_charset(message.charset)
   end
 

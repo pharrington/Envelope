@@ -16,7 +16,7 @@ class Email
     super(params)
   end
 
-  def deliver
+  def deliver(user, pass)
     message = PMail::SMTP::Message.new(
       @from,
       @to,
@@ -26,7 +26,7 @@ class Email
       html,
       @attachments
     )
-    smtp = PMail::SMTP.new(:host => 'badenoughdu.de', :user => 'xeno@badenoughdu.de', :pass => 'b1l7a0ckmn', :auth => :login)
+    smtp = PMail::SMTP.new(:host => 'badenoughdu.de', :user => user, :pass => pass, :auth => :login)
     smtp.send_message(message)
   end
 

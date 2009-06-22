@@ -9,7 +9,7 @@ module EmailHelper
   end
 
   def clean_plain(text)
-    html_escape(text).gsub(/\r\n/m, "<br />")
+    "<pre>" + html_escape(text) + "</pre>"
   end
 
   def strip_src(doc)
