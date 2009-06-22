@@ -1,4 +1,4 @@
 log/*.log
 config/database.yml
 tmp/**/*
-attachments/*
+attachments/**/*
